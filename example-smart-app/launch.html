@@ -25,12 +25,14 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script>
-      alert('pre authorization');
+      var t0 = performance.now();
       FHIR.oauth2.authorize({
         'client_id': '9136ced6-b1f0-4894-8aa3-991e52018290',
         'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
       });
-      alert('post authorization');
+var t1 = performance.now();
+      console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+      alert("Call to doSomething took " + (t1 - t0) + " milliseconds.")
     </script>
     <div class="spinner">
       <div class="bounce1"></div>
